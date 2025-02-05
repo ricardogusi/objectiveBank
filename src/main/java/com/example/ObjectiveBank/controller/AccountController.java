@@ -24,11 +24,11 @@ public class AccountController {
     }
 
     @GetMapping
-    public ResponseEntity<Account> getAccount(@RequestParam Integer accountNumber) {
+    public ResponseEntity<String> getAccount(@RequestParam Integer accountNumber) {
         Account account = accountRepository.findByAccountNumber(accountNumber);
         if (account == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("Conta não encontrada", HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<>(account, HttpStatus.OK);
+        return new ResponseEntity<>(account.toString(), HttpStatus.OK);
     }
 }

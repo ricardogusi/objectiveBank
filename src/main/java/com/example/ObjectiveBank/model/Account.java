@@ -11,20 +11,8 @@ public class Account {
     private Integer accountNumber;
     private Float balance;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public Integer getAccountNumber() {
         return accountNumber;
-    }
-
-    public void setAccountNumber(Integer accountNumber) {
-        this.accountNumber = accountNumber;
     }
 
     public Float getBalance() {
@@ -33,5 +21,10 @@ public class Account {
 
     public void setBalance(Float balance) {
         this.balance = balance;
+    }
+
+    @Override
+    public String toString() {
+        return "{accountNumber: " + accountNumber + ", " + "balance: " + balance + '}';
     }
 }
