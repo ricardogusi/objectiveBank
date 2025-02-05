@@ -2,31 +2,31 @@ package com.example.ObjectiveBank.model;
 
 public class Transaction {
 
-    private String formaDePagamento;
-    private Integer numeroDaCotna;
-    private Float saldo;
+    private String paymentMethod;
+    private Integer accountNumber;
+    private Float balance;
 
-    public String getFormaDePagamento() {
-        return formaDePagamento;
+    public String getPaymentMethod() {
+        return paymentMethod;
     }
 
-    public void setFormaDePagamento(String formaDePagamento) {
-        this.formaDePagamento = formaDePagamento;
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 
-    public Integer getNumeroDaCotna() {
-        return numeroDaCotna;
+    public Integer getAccountNumber() {
+        return accountNumber;
     }
 
-    public void setNumeroDaCotna(Integer numeroDaCotna) {
-        this.numeroDaCotna = numeroDaCotna;
+    public void setAccountNumber(Integer accountNumber) {
+        this.accountNumber = accountNumber;
     }
 
-    public Float getSaldo() {
-        return saldo;
+    public Float getBalance() {
+        return balance;
     }
 
-    public void setSaldo(Float saldo) {
-        this.saldo = saldo;
+    public void setBalance(Float balance) {
+        this.balance = balance;
     }
 }

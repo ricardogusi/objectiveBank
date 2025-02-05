@@ -8,8 +8,8 @@ public class Account {
 
     @Id
     private String id;
-    private Integer numeroDaConta;
-    private Float saldo;
+    private Integer accountNumber;
+    private Float balance;
 
     public String getId() {
         return id;
@@ -19,19 +19,19 @@ public class Account {
         this.id = id;
     }
 
-    public Integer getNumeroDaConta() {
-        return numeroDaConta;
+    public Integer getAccountNumber() {
+        return accountNumber;
     }
 
-    public void setNumeroDaConta(Integer numeroDaConta) {
-        this.numeroDaConta = numeroDaConta;
+    public void setAccountNumber(Integer accountNumber) {
+        this.accountNumber = accountNumber;
     }
 
-    public Float getSaldo() {
-        return saldo;
+    public Float getBalance() {
+        return balance;
     }
 
-    public void setSaldo(Float saldo) {
-        this.saldo = saldo;
+    public void setBalance(Float balance) {
+        this.balance = balance;
     }
 }
