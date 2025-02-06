@@ -16,11 +16,11 @@ public class TransactionServiceImpl implements TransactionService {
     private AccountRepository accountRepository;
 
     @Override
-    public void makeTransaction(Transaction transaction) {
+    public Account makeTransaction(Transaction transaction) {
         Account account = accountRepository.findByAccountNumber(transaction.getAccountNumber());
         if (account == null) {
             new ResponseEntity<>(HttpStatus.NOT_FOUND);
-            return;
+            return account;
         }
         float tax = 0.0F;
         switch (transaction.getPaymentMethod()) {
@@ -35,14 +35,13 @@ public class TransactionServiceImpl implements TransactionService {
                 break;
             default:
                 new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-                return;
+                return account;
         }
         float totalValue = transaction.getValue() * (1 + tax);
         if (account.getBalance() < totalValue) {
-            new ResponseEntity<>("Saldo insuficiente", HttpStatus.NOT_FOUND);
-            return;
+            throw new RuntimeException("Saldo insuficiente");
         }
         account.setBalance(account.getBalance() - totalValue);
-        accountRepository.save(account);
+        return accountRepository.save(account);
     }
 }

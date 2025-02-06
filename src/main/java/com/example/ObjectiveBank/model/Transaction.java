@@ -17,4 +17,16 @@ public class Transaction {
     public Float getValue() {
         return value;
     }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+    public void setAccountNumber(Integer accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public void setValue(Float value) {
+        this.value = value;
+    }
 }

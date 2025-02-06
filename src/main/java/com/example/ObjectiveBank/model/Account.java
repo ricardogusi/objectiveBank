@@ -15,6 +15,10 @@ public class Account {
         return accountNumber;
     }
 
+    public void setAccountNumber(Integer accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
     public Float getBalance() {
         return balance;
     }
